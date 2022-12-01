@@ -36,6 +36,10 @@ namespace PeopleData
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label3
@@ -99,11 +103,49 @@ namespace PeopleData
             this.textBox1.Size = new System.Drawing.Size(120, 20);
             this.textBox1.TabIndex = 7;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label4.Location = new System.Drawing.Point(249, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 24);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Skin Colour";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label5.Location = new System.Drawing.Point(136, 98);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 24);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Gender";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(110, 125);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(120, 20);
+            this.textBox4.TabIndex = 15;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(236, 125);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(120, 20);
+            this.textBox5.TabIndex = 14;
+            // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 165);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -127,5 +169,9 @@ namespace PeopleData
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }

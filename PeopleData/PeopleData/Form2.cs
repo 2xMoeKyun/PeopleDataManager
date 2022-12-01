@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Text.Json;
 using Newtonsoft.Json;
 
 
@@ -52,9 +51,14 @@ namespace PeopleData
             File.WriteAllText("Id.json", jsonString);
         }
 
+        private string PeopleOp(TextBox textBox)
+        {
+            return textBox.Text.Replace(" ", "");
+        }
+
         private void AddClick(object sender, EventArgs e)
         {
-            People p = new People(GetTxtCount(), textBox1.Text.Replace(" ",""), textBox2.Text.Replace(" ", ""), textBox3.Text.Replace(" ", ""));
+            People p = new People(GetTxtCount(), PeopleOp(textBox1), PeopleOp(textBox2), PeopleOp(textBox3), PeopleOp(textBox4), PeopleOp(textBox5));
             string jsonString = JsonConvert.SerializeObject(p);
             File.WriteAllText(GetTxtCount().ToString()+".json", jsonString);
 

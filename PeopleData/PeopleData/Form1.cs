@@ -14,9 +14,10 @@ namespace PeopleData
 {
     public partial class Form1 : Form
     {
-        public List<bool> PersonId = new List<bool>();
         public static int PersonIdCount;
         public static string CurrentPeople;
+        public static string CurrentAddit;
+        public Addit ad = new Addit();
         public Form1()
         {
             InitializeComponent();
@@ -42,7 +43,6 @@ namespace PeopleData
                 }
                 catch { continue; }
                 listBox1.Items.Add(read.ToString());
-
             }
             SavePersonIdCount();
         }
@@ -67,6 +67,13 @@ namespace PeopleData
         {
             if(listBox1.SelectedIndex > -1)
             CurrentPeople = listBox1.Items[Convert.ToInt32(listBox1.SelectedIndex)].ToString();
+            CurrentAddit = People.addit[Convert.ToInt32(listBox1.SelectedIndex)];
+            try
+            {
+               var a =  ad.AccessibilityObject.Parent;
+            }
+            catch { ad = new Addit(); }
+            ad.ShowInfo();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -107,21 +114,28 @@ namespace PeopleData
     public class People
     {
         [NonSerialized]
-        public static List<People> people = new List<People>();
+        public static List<String> addit = new List<string>();
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Otchestvo { get; set; }
+        public string Gender { get; set; }
+        public string SkinColour { get; set; }
 
-        public People(int id, string name, string surname, string blalba)
+        public People(int id, string name, string surname, string blalba, string gender, string skinColour)
         {
             this.Id = id;
             this.Name = name;
             this.Surname = surname;
             this.Otchestvo = blalba;
+            //additionals
+            this.Gender = gender;
+            this.SkinColour = skinColour;
         }
+
         public override string ToString()
         {
+            addit.Add($"{Gender} {SkinColour}");
             return $"{Id} {Name} {Surname} {Otchestvo}";
         }
     }
